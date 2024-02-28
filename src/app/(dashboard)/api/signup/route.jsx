@@ -3,6 +3,17 @@ import Profile from "@/models/Profile";
 import bcrypt from 'bcrypt'
 import { NextResponse } from "next/server";
 
+const cors = require('cors');
+  app.use(cors())
+
+  router.get("/", (req, res) => {
+    res.setHeader("Access-Control-Allow-Origin", "*")
+    res.setHeader("Access-Control-Allow-Credentials", "true");
+    res.setHeader("Access-Control-Max-Age", "1800");
+    res.setHeader("Access-Control-Allow-Headers", "content-type");
+    res.setHeader( "Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS" ); 
+     });
+
 
 export const POST = async (request) => {
     const {email, username, password} = await request.json()
