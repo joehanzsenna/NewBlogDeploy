@@ -2,11 +2,11 @@ import connect from "@/Utils/mongodb";
 import Profile from "@/models/Profile";
 import bcrypt from 'bcrypt'
 import { NextResponse } from "next/server";
-import cors from "cors";
+// import cors from "cors";
 
-let cors = require('cors')
+// let cors = require('cors')
 
-app.use(cors())
+// app.use(cors())
 
 
 export const POST = async (request) => {
