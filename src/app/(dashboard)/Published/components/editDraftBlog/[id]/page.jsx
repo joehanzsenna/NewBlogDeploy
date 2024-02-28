@@ -6,7 +6,7 @@ const getBlogById = async (id) => {
   });
 
   if (!res.ok) {
-    throw new Error("Failed to fetch Published");
+    throw new Error("Failed to fetch drafted");
   }
 
   return res.json();

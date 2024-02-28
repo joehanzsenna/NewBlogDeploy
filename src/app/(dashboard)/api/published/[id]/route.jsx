@@ -22,3 +22,4 @@ export async function GET(request, { params }) {
   const published = await PublishedBlog.findOne({ _id: id });
   return NextResponse.json({ published }, { status: 200 });
 }
+

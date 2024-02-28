@@ -15,8 +15,8 @@ export default function RemoveBtn({ id }) {
         method: "DELETE",
       });
 
-      if (res.ok) {
-        router.refresh();
+      if (res.status === 200) {
+       return router.refresh();
       }
     }
   };

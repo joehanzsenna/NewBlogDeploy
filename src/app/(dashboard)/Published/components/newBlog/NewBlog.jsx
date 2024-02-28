@@ -84,7 +84,7 @@ export default function NewBlog() {
     }
     setErrors({});
 
-    const readtimett = new Date()
+    const readtime = new Date()
 
     const photo2 = photo[0]
     console.log(photo2);
@@ -131,10 +131,10 @@ export default function NewBlog() {
         });
 
         if (res.status === 201) {
-          toast("successfully Published")
+          toast("successfully Drafted")
           return router.replace("/profile");
         } else {
-          throw new Error("Failed to publish");
+          throw new Error("Failed to Draft");
         }
         if (res.status === 500) {
           alert(`There's a problem`);
