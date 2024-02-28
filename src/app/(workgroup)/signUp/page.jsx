@@ -46,6 +46,7 @@ export default function SignUpPage() {
       try {
         const res = await fetch("http://localhost:3000/api/signup", {
           method: "POST",
+          mode: "no-cors",
           headers: {
             "content-Type": "aplication/json",
           },
