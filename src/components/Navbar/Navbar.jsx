@@ -28,7 +28,7 @@ const Navbar = () => {
   };
   return (
     <div>
-      <nav className=" h-auto bg-white flex justify-between items-center md:mx-[5rem] md:my-[2rem] mx-5 my-2 ">
+      <nav className=" h-auto bg-white flex justify-between items-center md:mx-[5rem] md:my-[2rem] mx- my-2 ">
         <Link href={"/"}>
           <h1 className="text-[45px] text-[#26BDD2] font-extrabold ">BLOGG</h1>
         </Link>
@@ -49,7 +49,7 @@ const Navbar = () => {
               </ul>
               <div className="flex flex-col items-center my-10">
                {!session ? (
-                <div>
+                <div className="flex flex-col gap-2">
                    <Link href={"/signUp"}>
                   <button className="w-[150px] h-[50px] border border-white bg-[#26BDD2] text-white rounded-lg text-[18px] font-medium">
                     Get Started
@@ -62,12 +62,9 @@ const Navbar = () => {
                 </Link> 
                 </div>
                ): (
-                <div>
-                   <Link href={"/signUp"}>
-                  <button className="w-[150px] h-[50px] border border-white bg-[#26BDD2] text-white rounded-lg text-[18px] font-medium">
-                    Get Started
-                  </button>
-                </Link>
+                <div className="flex flex-col gap-2">
+                  <Link href={'./profile'}>
+                  <button className="w-[150px] h-[50px] border-solid bg-white text-black rounded-lg text-[18px] font-medium">Profile</button></Link>
                 <div className="flex items-center">
                  <button className="w-[150px] h-[50px] border-solid bg-white text-black rounded-lg text-[18px] font-medium"
                   onClick={() => {
