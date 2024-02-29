@@ -32,7 +32,7 @@ export async function DELETE(request) {
   const id = request.nextUrl.searchParams.get("id");
   await connect();
   await PublishedBlog.findByIdAndDelete(id);
-  return NextResponse.json({ message: "Your work has been successfully deleted" }, { status: 200 });  
+  return NextResponse.json({ message: "Your work has been successfully deleted" }, { status: 201 });  
 }
 
 // {

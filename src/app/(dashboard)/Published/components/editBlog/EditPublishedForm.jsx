@@ -8,7 +8,8 @@ import Vector3 from "@/assets/Vector3.png";
 import Vector4 from "@/assets/Vector4.png";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 
 
 
@@ -112,7 +113,8 @@ export default function EditPublishedForm({ id, title, tag, tagImage, readtime, 
           throw new Error("Failed to publish");
         }
         if (res.status === 500) {
-          alert(`There's a problem`);
+          toast("There's a problem")
+          // alert(`There's a problem`);
         }
       } catch (error) {
         console.log(error);
@@ -132,14 +134,16 @@ export default function EditPublishedForm({ id, title, tag, tagImage, readtime, 
           body: JSON.stringify({newTitle, newTag, newTagImage, newReadtime, newStory}),
         });
   
-        if (res.status === 201) {
+        if (res.status === 200) {
+          toast("successfully updated draft")
           router.replace("/profile");
-          alert(`succesfully sent`)
+          // alert(`succesfully sent`)
         } else {
-          throw new Error("Failed to publish");
+          throw new Error("Failed to update draft");
         }
         if (res.status === 500) {
-          alert(`There's a problem`);
+          // alert(`There's a problem`);
+          toast("There's a problem")
         }
       } catch (error) {
         console.log(error);
@@ -273,6 +277,7 @@ export default function EditPublishedForm({ id, title, tag, tagImage, readtime, 
           </button>
         </div>
       </form>
+      <ToastContainer />
     </div>
    
   );

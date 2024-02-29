@@ -8,6 +8,8 @@ import Vector3 from "@/assets/Vector3.png";
 import Vector4 from "@/assets/Vector4.png";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 
 
 
@@ -63,13 +65,13 @@ export default function EditDraftedForm({ id, title, tag, tagImage, readtime, st
       newErrors.photo = "Photo is required";
     }
 
-    if (!newReadtime.trim()) {
-      newErrors.newReadtime = "Readtime is required";
-    }else if (newReadtime.trim().length < 5){
-      newErrors.newReadtime = "Readtime cannot be less than 5";
-    }else if (newReadtime.trim().length > 20){
-      newErrors.newReadtime = "Readtime cannot be more than 20";
-    }
+    // if (!newReadtime.trim()) {
+    //   newErrors.newReadtime = "Readtime is required";
+    // }else if (newReadtime.trim().length < 5){
+    //   newErrors.newReadtime = "Readtime cannot be less than 5";
+    // }else if (newReadtime.trim().length > 20){
+    //   newErrors.newReadtime = "Readtime cannot be more than 20";
+    // }
 
     if (!newStory.trim()) {
       newErrors.newStory = "Story is required";
@@ -102,7 +104,7 @@ export default function EditDraftedForm({ id, title, tag, tagImage, readtime, st
           body: JSON.stringify( {newTitle, newTag, newTagImage, newReadtime, newStory} ),
         });
   
-        if (res.status === 201) {
+        if (res.status === 200) {
           toast("successfully updated Published")
           return router.replace("/profile");
           // alert(`succesfully sent`)
@@ -132,13 +134,14 @@ export default function EditDraftedForm({ id, title, tag, tagImage, readtime, st
         });
   
         if (res.status === 200) {
+          toast("successfully updated Draft")
           router.replace("/profile");
-          alert(`succesfully sent`)
+          // alert(`succesfully sent`)
         } else {
-          throw new Error("Failed to publish");
+          throw new Error("Failed to draft");
         }
         if (res.status === 500) {
-          alert(`There's a problem`);
+          toast("There's a problem ")
         }
       } catch (error) {
         console.log(error);
@@ -272,6 +275,7 @@ export default function EditDraftedForm({ id, title, tag, tagImage, readtime, st
           </button>
         </div>
       </form>
+      <ToastContainer />
     </div>
    
   );

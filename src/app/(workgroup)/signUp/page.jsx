@@ -44,7 +44,7 @@ export default function SignUpPage() {
     if (Object.keys(validationErrors).length === 0) {
       console.log(formData);
       try {
-        const res = await fetch("http://localhost:3000/api/signup", {
+        const res = await fetch("blogapp00.vercel.app/api/signup", {
           method: "POST",
           // mode: "no-cors",
           headers: {
@@ -52,6 +52,7 @@ export default function SignUpPage() {
           },
           body: JSON.stringify(formData),
         });
+        console.log(res.ok);
         if (res.ok) {
           alert("Registration Successful");
           setFormData({

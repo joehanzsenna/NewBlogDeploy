@@ -26,7 +26,7 @@ export default async function Draft() {
           >
             <PublishedList
               img={p.tagImage}
-              // views={p.readtime}
+              views={p.readtime}
               title={p.title}
               beauty={p.tag}
               href={`/Published/components/editDraftBlog/${p._id}`}
