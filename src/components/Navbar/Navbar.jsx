@@ -48,7 +48,9 @@ const Navbar = () => {
                 <li className="text-2xl font-medium mb-5">Contact</li>
               </ul>
               <div className="flex flex-col items-center my-10">
-                <Link href={"/signUp"}>
+               {!session ? (
+                <div>
+                   <Link href={"/signUp"}>
                   <button className="w-[150px] h-[50px] border border-white bg-[#26BDD2] text-white rounded-lg text-[18px] font-medium">
                     Get Started
                   </button>
@@ -58,6 +60,21 @@ const Navbar = () => {
                   Signin
                  </button>
                 </Link> 
+                </div>
+               ): (
+                <div>
+                   <Link href={"/signUp"}>
+                  <button className="w-[150px] h-[50px] border border-white bg-[#26BDD2] text-white rounded-lg text-[18px] font-medium">
+                    Get Started
+                  </button>
+                </Link>
+                <Link href={"/signIn"} className="flex items-center">
+                 <button className="w-[150px] h-[50px] border-solid bg-white text-black rounded-lg text-[18px] font-medium">
+                  Signin
+                 </button>
+                </Link> 
+                </div>
+               )}
               </div>
             </div>
           )}
@@ -83,14 +100,15 @@ const Navbar = () => {
             <div className="flex items-center gap-2">
               <Link href={"/signUp"}>
                 <button className="w-[150px] h-[50px] border-solid bg-[#26BDD2] text-white rounded-lg text-[18px] font-medium">
-                  Get Started
+                  
                 </button>
               </Link>
-              <Link href="/signIn">
-                <button className="w-[150px] h-[50px] border-solid bg-white rounded-lg text-[18px] font-medium">
-                  SignIn
+                <button className="w-[150px] h-[50px] border-solid bg-white rounded-lg text-[18px] font-medium " 
+                onClick={() => {
+                  signOut();
+                }}>
+                  Sign out
                 </button>
-              </Link>
               </div>
             </>
           ) : (
