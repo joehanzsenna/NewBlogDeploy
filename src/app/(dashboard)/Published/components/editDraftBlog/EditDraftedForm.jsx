@@ -96,7 +96,7 @@ export default function EditDraftedForm({ id, title, tag, tagImage, readtime, st
       try {
         const newTagImage = await uploadImage(photo2)
         // setPhoto(newTagImage)
-        const res = await fetch(`blogapp00.vercel.app/api/published/${id}`, {
+        const res = await fetch(`${window.location.origin}/api/published/${id}`, {
           method: "PUT",
           headers: {
             "content-Type": "application/json",

@@ -94,7 +94,7 @@ export default function NewBlog() {
       try {
         const tagImage = await uploadImage(photo2)
 
-        const res = await fetch("http://localhost:3000/api/published", {
+        const res = await fetch(`${window.location.origin}/api/published`, {
           method: "POST",
           headers: {
             "content-Type": "application/json",
