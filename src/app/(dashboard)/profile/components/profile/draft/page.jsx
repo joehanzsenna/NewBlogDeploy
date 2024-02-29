@@ -3,7 +3,7 @@ import { profileData } from "../ProfileDb";
 import PublishedList from "../../publishedLists/PublishedList";
 
 const getDraftedBlog = async () => {
-  const res = await fetch("http://localhost:3000/api/draft", {
+  const res = await fetch("blogapp00.vercel.app/api/draft", {
     cache: "no-store",
   });
 

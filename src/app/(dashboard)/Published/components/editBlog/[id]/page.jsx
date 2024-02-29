@@ -1,7 +1,7 @@
 import EditPublishedForm from "../EditPublishedForm";
 
 const getBlogById = async (id) => {
-  const res = await fetch(`http://localhost:3000/api/published/${id}`, {
+  const res = await fetch(`blogapp00.vercel.app/api/published/${id}`, {
     cache: "no-store",
   });
 
