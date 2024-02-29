@@ -108,7 +108,7 @@ const Navbar = () => {
               </Link>
               <Link href="/signIn">
                 <button className="w-[150px] h-[50px] border-solid bg-white rounded-lg text-[18px] font-medium" >
-                  SignOut
+                  SignIn
                 </button>
               </Link>
               </div>
