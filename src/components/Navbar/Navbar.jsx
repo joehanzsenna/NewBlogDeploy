@@ -68,11 +68,14 @@ const Navbar = () => {
                     Get Started
                   </button>
                 </Link>
-                <Link href={"/signIn"} className="flex items-center">
-                 <button className="w-[150px] h-[50px] border-solid bg-white text-black rounded-lg text-[18px] font-medium">
-                  Signin
+                <div className="flex items-center">
+                 <button className="w-[150px] h-[50px] border-solid bg-white text-black rounded-lg text-[18px] font-medium"
+                  onClick={() => {
+                    signOut();
+                  }}>
+                  Sign out
                  </button>
-                </Link> 
+                </div> 
                 </div>
                )}
               </div>
@@ -100,15 +103,14 @@ const Navbar = () => {
             <div className="flex items-center gap-2">
               <Link href={"/signUp"}>
                 <button className="w-[150px] h-[50px] border-solid bg-[#26BDD2] text-white rounded-lg text-[18px] font-medium">
-                  
+                  Get Started
                 </button>
               </Link>
-                <button className="w-[150px] h-[50px] border-solid bg-white rounded-lg text-[18px] font-medium " 
-                onClick={() => {
-                  signOut();
-                }}>
-                  Sign out
+              <Link href="/signIn">
+                <button className="w-[150px] h-[50px] border-solid bg-white rounded-lg text-[18px] font-medium" >
+                  SignOut
                 </button>
+              </Link>
               </div>
             </>
           ) : (
