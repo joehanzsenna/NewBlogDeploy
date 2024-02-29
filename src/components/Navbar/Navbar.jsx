@@ -63,7 +63,7 @@ const Navbar = () => {
                 </div>
                ): (
                 <div className="flex flex-col gap-2">
-                  <Link href={'./profile'}>
+                  <Link href={'./profile/components/profile'}>
                   <button className="w-[150px] h-[50px] border-solid bg-white text-black rounded-lg text-[18px] font-medium">Profile</button></Link>
                 <div className="flex items-center">
                  <button className="w-[150px] h-[50px] border-solid bg-white text-black rounded-lg text-[18px] font-medium"
