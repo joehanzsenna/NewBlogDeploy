@@ -1,7 +1,7 @@
 import EditDraftedForm from "../EditDraftedForm";
 
 const getBlogById = async (id) => {
-  const res = await fetch(`blogapp00.vercel.app/api/draft/${id}`, {
+  const res = await fetch(`${window.location.origin}/api/draft/${id}`, {
     cache: "no-store",
   });
 

@@ -122,7 +122,7 @@ export default function NewBlog() {
       try {
         const tagImage = await uploadImage(photo2)
 
-        const res = await fetch("blogapp00.vercel.app/api/draft", {
+        const res = await fetch(`${window.location.origin}/api/draft`, {
           method: "POST",
           headers: {
             "content-Type": "application/json",
