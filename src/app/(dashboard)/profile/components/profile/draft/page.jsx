@@ -1,9 +1,10 @@
 import React from "react";
 import { profileData } from "../ProfileDb";
 import PublishedList from "../../publishedLists/PublishedList";
+import { BASE_API_URL } from "@/Utils/constants";
 
 const getDraftedBlog = async () => {
-  const res = await fetch(`${window.location.origin}/api/draft`, {
+  const res = await fetch(`${BASE_API_URL}/api/draft`, {
     cache: "no-store",
   });
 
@@ -16,6 +17,9 @@ const getDraftedBlog = async () => {
 
 export default async function Draft() {
   const { draftBlog } = await getDraftedBlog();
+  if(!BASE_API_URL){
+    return null
+  }
   return (
     <div>
       <div>

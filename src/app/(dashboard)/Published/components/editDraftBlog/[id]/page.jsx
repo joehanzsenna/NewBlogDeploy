@@ -1,7 +1,8 @@
+import { BASE_API_URL } from "@/Utils/constants";
 import EditDraftedForm from "../EditDraftedForm";
 
 const getBlogById = async (id) => {
-  const res = await fetch(`${window.location.origin}/api/draft/${id}`, {
+  const res = await fetch(`${BASE_API_URL}/api/draft/${id}`, {
     cache: "no-store",
   });
 

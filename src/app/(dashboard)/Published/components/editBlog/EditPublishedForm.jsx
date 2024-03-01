@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
+import { BASE_API_URL } from "@/Utils/constants";
 
 
 
@@ -96,7 +97,7 @@ export default function EditPublishedForm({ id, title, tag, tagImage, readtime, 
       try {
         const newTagImage = await uploadImage(photo2)
         // setPhoto(newTagImage)
-        const res = await fetch(`${window.location.origin}/api/published/${id}`, {
+        const res = await fetch(`${BASE_API_URL}/api/published/${id}`, {
           method: "PUT",
           headers: {
             "content-Type": "application/json",
@@ -126,7 +127,7 @@ export default function EditPublishedForm({ id, title, tag, tagImage, readtime, 
        //HANDLE DRAFT FUNC
        try {
         const newTagImage = await uploadImage(photo2)
-        const res = await fetch(`${window.location.origin}/api/draft/${id}`, {
+        const res = await fetch(`${BASE_API_URL}/api/draft/${id}`, {
           method: "PUT",
           headers: {
             "content-Type": "application/json",

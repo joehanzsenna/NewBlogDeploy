@@ -13,6 +13,7 @@ import styles from "./SignUp.module.css";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Link from "next/link";
+import { BASE_API_URL } from "@/Utils/constants";
 
 export default function SignUpPage() {
   const [show, setShow] = useState(false);
@@ -44,7 +45,7 @@ export default function SignUpPage() {
     if (Object.keys(validationErrors).length === 0) {
       console.log(formData);
       try {
-        const res = await fetch(`${window.location.origin}/api/signup`, {
+        const res = await fetch(`${BASE_API_URL}/api/signup`, {
           method: "POST",
           // mode: "no-cors",
           headers: {
