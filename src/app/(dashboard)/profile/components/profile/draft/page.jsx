@@ -45,7 +45,7 @@ export default async function Draft() {
         <div key={pro.id}>
           <PublishedList
             img={pro.img}
-            readtime={pro.readtime}
+            views={pro.views}
             beauty={pro.beauty}
             title={pro.title}
             story={pro.story}

@@ -84,10 +84,12 @@ if (status === 'unauthenticated') {
 
 const items = [
   {
+    id: 0,
     title: 'Published',
     content: (<Publish/>),
   },
   {
+    id: 1,
     title: 'Draft',
     content: (<Draft/> ),
   },

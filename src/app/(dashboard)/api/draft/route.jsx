@@ -34,3 +34,4 @@ export async function DELETE(request) {
   await DraftBlog.findByIdAndDelete(id);
   return NextResponse.json({ message: "Your work has been successfully deleted" }, { status: 200 });  
 }
+

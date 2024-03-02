@@ -19,8 +19,8 @@ const TabsComponent = ({items}) => {
           {items.map((item, index) => (
             <button
               ref={index === 0 ? firstBtnRef : null}
-              key={index}
-              // key={item.id}
+              // key={index}
+              key={item.id}
               onClick={() => setSelectedTab(index)}
               className={`outline-none w-full p-2 hover:bg-[#26BDD2] hover:text-white rounded-t-lg text-cneter  ${
                 selectedTab === index ? "bg-[#26BDD2] text-white" : ""
