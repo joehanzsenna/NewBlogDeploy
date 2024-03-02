@@ -1,5 +1,6 @@
 "use client";
 
+import { BASE_API_URL } from "@/Utils/constants";
 import del from "@/assets/delete.png"
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -11,7 +12,7 @@ export default function RemoveBtn({ id }) {
     const confirmed = confirm("Are you sure?");
 
     if (confirmed) {
-      const res = await fetch(`http://localhost:3000/api/published?id=${id}`, {
+      const res = await fetch(`${BASE_API_URL}/api/published?id=${id}`, {
         method: "DELETE",
       });
 
