@@ -17,9 +17,9 @@ const getDraftedBlog = async () => {
 
 export default async function Draft() {
   const { draftBlog } = await getDraftedBlog();
-  if(!BASE_API_URL){
-    return null
-  }
+  // if(!BASE_API_URL){
+  //   return null
+  // }
   return (
     <div>
       <div>

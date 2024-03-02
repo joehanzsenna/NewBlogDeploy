@@ -18,9 +18,9 @@ const getPublishedBlog = async () => {
 export default async function Publish() {
   const { publishedBlog } = await getPublishedBlog();
 
-  if(!BASE_API_URL){
-    return null
-  }
+  // if(!BASE_API_URL){
+  //   return null
+  // }
   return (
     <div>
       <div>
